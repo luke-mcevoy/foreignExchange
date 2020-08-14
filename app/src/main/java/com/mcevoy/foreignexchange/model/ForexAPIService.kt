@@ -7,7 +7,10 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 class ForexAPIService {
 
-    private var BASE_URL = "https://api.ratesapi.io/api/latest"
+    private var API_ACCESS_KEY = "4cbfc042478a3c5440c9d4b2be582443"
+    private var BASE = "USD"
+    private var SYMBOLS = "GBP,JPY,EUR"
+    private var BASE_URL = "http://data.fixer.io/api/latest?$API_ACCESS_KEY&$BASE&$SYMBOLS"
 
     private var API = Retrofit.Builder()
         .baseUrl(BASE_URL)
